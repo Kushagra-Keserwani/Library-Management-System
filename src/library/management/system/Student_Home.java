@@ -113,7 +113,7 @@ public class Student_Home extends JFrame implements ActionListener{
             contentPane.add(l2);
 
             JLabel l3 = new JLabel("");
-            ImageIcon i4  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/third.png"));
+            ImageIcon i4  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/issueReturn.png"));
             Image i5 = i4.getImage().getScaledInstance(200, 200,Image.SCALE_DEFAULT);
             ImageIcon i6 = new ImageIcon(i5);
             l3 = new JLabel(i6);
@@ -121,7 +121,7 @@ public class Student_Home extends JFrame implements ActionListener{
             contentPane.add(l3);
 
             JLabel l4 = new JLabel("");
-            ImageIcon i7  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/fourth.png"));
+            ImageIcon i7  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/sixth.png"));
             Image i8 = i7.getImage().getScaledInstance(150, 150,Image.SCALE_DEFAULT);
             ImageIcon i9 = new ImageIcon(i8);
             l4 = new JLabel(i9);
@@ -135,14 +135,14 @@ public class Student_Home extends JFrame implements ActionListener{
             b1.setBounds(60, 320, 159, 44);
             contentPane.add(b1);
 
-            b2 = new JButton("Statistics");
+            b2 = new JButton("Issued Books");
             b2.addActionListener(this);
             b2.setBackground(Color.BLACK);
             b2.setForeground(Color.WHITE);
             b2.setBounds(313, 320, 139, 44);
             contentPane.add(b2);
 
-            b3 = new JButton("Add Student");
+            b3 = new JButton("Returned Books");
             b3.addActionListener(this);
             b3.setBackground(Color.BLACK);
             b3.setForeground(Color.WHITE);
@@ -178,7 +178,7 @@ public class Student_Home extends JFrame implements ActionListener{
             contentPane.add(b6);
 
             JLabel l5 = new JLabel("");
-            ImageIcon i10  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/fifth.png"));
+            ImageIcon i10  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/second.png"));
             Image i11 = i10.getImage().getScaledInstance(150, 150,Image.SCALE_DEFAULT);
             ImageIcon i12 = new ImageIcon(i11);
             l5 = new JLabel(i12);
@@ -242,11 +242,11 @@ public class Student_Home extends JFrame implements ActionListener{
             }
             if(ae.getSource() == b2){
                 this.setVisible(false);
-                new Statistics().setVisible(true);
+                new IssuedBooks(student_id).setVisible(true);
             }
             if(ae.getSource() == b3){
                 this.setVisible(false);
-                new AddStudent().setVisible(true);
+                new ReturnedBooks(student_id).setVisible(true);
             }
             if(ae.getSource() == b4){
                 this.setVisible(false);
@@ -254,7 +254,7 @@ public class Student_Home extends JFrame implements ActionListener{
             }
             if(ae.getSource() == b5){
                 this.setVisible(false);
-                new ReturnBook().setVisible(true);
+                new GetBookSuggesions(student_id).setVisible(true);
             
             }
             if(ae.getSource() == b6){String url = "https://ndl.iitkgp.ac.in/";
