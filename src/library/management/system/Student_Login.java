@@ -84,14 +84,14 @@ public class Student_Login extends JFrame implements ActionListener{
          if(ae.getSource() == b1){
         try{
             conn c1 = new conn();
-            String u = t1.getText();
+            int u = Integer.parseInt(t1.getText());
             String v = t2.getText();
             
             String q = "select * from login where student_id='"+u+"' and name='"+v+"'";
             
             ResultSet rs = c1.s.executeQuery(q); 
             if(rs.next()){
-                new Home().setVisible(true);
+                new Student_Home(u).setVisible(true);
                 this.setVisible(false);
             }else{
                 JOptionPane.showMessageDialog(null, "Invalid login");

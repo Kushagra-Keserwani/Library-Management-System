@@ -105,7 +105,7 @@ public class BookDetailStudent extends JFrame implements ActionListener{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				setVisible(false);
-				new Student_Home().setVisible(true);
+//				new Student_Home().setVisible(true);
 			}
 		});
 	l3.setForeground(Color.GRAY);

@@ -26,10 +26,10 @@ public class Student_Home extends JFrame implements ActionListener{
         private JButton b1,b2,b3,b4,b5,b6;
 
 	public static void main(String[] args) {
-            new Student_Home().setVisible(true);
+            new Student_Home(0).setVisible(true);
 	}
         
-        public Student_Home() {
+        public Student_Home(int student_id) {
 	
             setBounds(400, 150, 1000, 800);
             contentPane = new JPanel();
@@ -237,7 +237,7 @@ public class Student_Home extends JFrame implements ActionListener{
 //            }
             
             if(ae.getSource() == b1){
-                setVisible(false);
+//                setVisible(false);
 		new BookDetailStudent().setVisible(true);
             }
             if(ae.getSource() == b2){
