@@ -21,7 +21,7 @@ import java.net.URISyntaxException;
 
 
 public class Student_Home extends JFrame implements ActionListener{
-
+        public String student_id;
 	private JPanel contentPane;
         private JButton b1,b2,b3,b4,b5,b6;
 
@@ -30,7 +30,7 @@ public class Student_Home extends JFrame implements ActionListener{
 	}
         
         public Student_Home(String student_id) {
-	
+	    this.student_id = student_id;
             setBounds(400, 150, 1000, 800);
             contentPane = new JPanel();
             setContentPane(contentPane);
@@ -156,14 +156,14 @@ public class Student_Home extends JFrame implements ActionListener{
             panel.setBackground(Color.WHITE);
             contentPane.add(panel);
 
-            b4 = new JButton("Issue Book");
+            b4 = new JButton("Suggest Book");
             b4.addActionListener(this);
             b4.setBackground(Color.BLACK);
             b4.setForeground(Color.WHITE);
             b4.setBounds(76, 620, 143, 41);
             contentPane.add(b4);
 
-            b5 = new JButton("Return Book");
+            b5 = new JButton("Get Suggestion");
             b5.addActionListener(this);
             b5.setBackground(Color.BLACK);
             b5.setForeground(Color.WHITE);
@@ -186,7 +186,7 @@ public class Student_Home extends JFrame implements ActionListener{
             contentPane.add(l5);
 
             JLabel l6 = new JLabel("");
-            ImageIcon i13  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/sixth.png"));
+            ImageIcon i13  = new ImageIcon(ClassLoader.getSystemResource("library/management/system/icons/getSuggestion.png"));
             Image i14 = i13.getImage().getScaledInstance(150, 150,Image.SCALE_DEFAULT);
             ImageIcon i15 = new ImageIcon(i14);
             l6 = new JLabel(i15);
@@ -250,7 +250,7 @@ public class Student_Home extends JFrame implements ActionListener{
             }
             if(ae.getSource() == b4){
                 this.setVisible(false);
-                new IssueBook().setVisible(true);
+                new giveDemand(student_id).setVisible(true);
             }
             if(ae.getSource() == b5){
                 this.setVisible(false);
