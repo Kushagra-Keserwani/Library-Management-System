@@ -84,10 +84,10 @@ public class Student_Login extends JFrame implements ActionListener{
          if(ae.getSource() == b1){
         try{
             conn c1 = new conn();
-            int u = Integer.parseInt(t1.getText());
+            String u = t1.getText();
             String v = t2.getText();
             
-            String q = "select * from login where student_id='"+u+"' and name='"+v+"'";
+            String q = "select * from student where student_id='"+u+"' and password='"+v+"'";
             
             ResultSet rs = c1.s.executeQuery(q); 
             if(rs.next()){

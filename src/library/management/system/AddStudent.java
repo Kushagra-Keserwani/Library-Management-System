@@ -160,15 +160,16 @@ public class AddStudent extends JFrame implements ActionListener{
             if(ae.getSource() == b1){
                 try{
                 conn con = new conn();
-                String sql = "insert into student(student_id, name, father, course, branch, year, semester) values(?, ?, ?, ?, ?, ?, ?)";
+                String sql = "insert into student(student_id, name, password, father, course, branch, year, semester) values(?, ?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement st = con.c.prepareStatement(sql);
 		st.setString(1, t1.getText());
 		st.setString(2, t2.getText());
-		st.setString(3, t3.getText());
-		st.setString(4, (String) comboBox_3.getSelectedItem());
-		st.setString(5, (String) comboBox.getSelectedItem());
-		st.setString(6, (String) comboBox_1.getSelectedItem());
-		st.setString(7, (String) comboBox_2.getSelectedItem());
+                st.setString(3, t3.getText());
+		st.setString(4, t3.getText());
+		st.setString(5, (String) comboBox_3.getSelectedItem());
+		st.setString(6, (String) comboBox.getSelectedItem());
+		st.setString(7, (String) comboBox_1.getSelectedItem());
+		st.setString(8, (String) comboBox_2.getSelectedItem());
 
 		int i = st.executeUpdate();
 		if (i > 0){
