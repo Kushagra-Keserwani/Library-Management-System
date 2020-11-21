@@ -40,7 +40,7 @@ public class StudentDetails extends JFrame implements ActionListener{
     }
 
     public StudentDetails() {
-        setBounds(350, 200, 890, 475);
+        setBounds(350, 200, 1490, 500);
         contentPane = new JPanel();
 	contentPane.setBackground(new Color(220, 220, 220));
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -49,7 +49,7 @@ public class StudentDetails extends JFrame implements ActionListener{
 	contentPane.setLayout(null);
 
 	JScrollPane scrollPane = new JScrollPane();
-	scrollPane.setBounds(79, 133, 771, 288);
+	scrollPane.setBounds(79, 133, 1300, 288);
 	contentPane.add(scrollPane);
 
 	table = new JTable();
@@ -126,7 +126,7 @@ public class StudentDetails extends JFrame implements ActionListener{
 	JPanel panel = new JPanel();
 	panel.setBorder(new TitledBorder(new LineBorder(new Color(95, 158, 160), 3, true), "Student-Deatails",
 		TitledBorder.LEADING, TitledBorder.TOP, null, new Color(72, 209, 204)));
-	panel.setBounds(68, 59, 790, 370);
+	panel.setBounds(68, 59, 1330, 370);
         panel.setBackground(Color.WHITE);
 	contentPane.add(panel);
         
