@@ -7,24 +7,25 @@ import javax.swing.border.*;
 import net.proteanit.sql.DbUtils;
 import java.awt.event.*;
 
-public class GetBookSuggesions extends JFrame{
+public class GetBookSuggestions extends JFrame{
 
     private JPanel contentPane;
     private JTable table;
    
 
     public static void main(String[] args) {
-        new GetBookSuggesions("").setVisible(true);
+        new GetBookSuggestions("").setVisible(true);
     }
 
     public void returnBook(String student_id) {
 	try {
             conn con =  new conn();
-            String sql2 = "select branch from student where student_id = '"+student_id+"'";
-            PreparedStatement st2 = con.c.prepareStatement(sql2);
-            ResultSet rs2 = st2.executeQuery();
-            String branch = rs2.getString("branch");
-            String sql = "select *, COUNT(*) AS num FROM returnBook WHERE branch = '"+branch+"' GROUP BY bname ORDER BY num DESC";
+//            String sql2 = "select branch FROM student WHERE student_id = '"+student_id+"'";
+//            PreparedStatement st2 = con.c.prepareStatement(sql2);
+//            ResultSet rs2 = st2.executeQuery();
+//            String branch = rs2.getString("branch");
+//            System.out.println(branch);
+            String sql = "select book_id, bname, branch, COUNT(*) AS num FROM returnBook WHERE branch IN (select branch from student where student_id = '"+student_id+"') GROUP BY bname ORDER BY num DESC";
             PreparedStatement st = con.c.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
 
@@ -37,8 +38,7 @@ public class GetBookSuggesions extends JFrame{
 
     
 
-    public GetBookSuggesions(String student_id) {
-
+    public GetBookSuggestions(String student_id) {
         setBounds(400, 200, 810, 594);
 	contentPane = new JPanel();
         contentPane.setBackground(Color.WHITE);
@@ -57,7 +57,7 @@ public class GetBookSuggesions extends JFrame{
 	scrollPane.setViewportView(table);
 
 	JPanel panel = new JPanel();
-	panel.setBorder(new TitledBorder(new LineBorder(new Color(47, 79, 79), 2, true), "Suggested-Books",
+	panel.setBorder(new TitledBorder(new LineBorder(new Color(47, 79, 79), 2, true), "Suggested Books",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 128, 128)));
 	panel.setForeground(new Color(0, 128, 128));
 	panel.setBounds(26, 36, 737, 475);

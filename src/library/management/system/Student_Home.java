@@ -254,7 +254,7 @@ public class Student_Home extends JFrame implements ActionListener{
             }
             if(ae.getSource() == b5){
                 this.setVisible(false);
-                new GetBookSuggesions(student_id).setVisible(true);
+                new GetBookSuggestions(student_id).setVisible(true);
             
             }
             if(ae.getSource() == b6){String url = "https://ndl.iitkgp.ac.in/";
