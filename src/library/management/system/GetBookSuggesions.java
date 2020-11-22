@@ -20,7 +20,11 @@ public class GetBookSuggesions extends JFrame{
     public void returnBook(String student_id) {
 	try {
             conn con =  new conn();
-            String sql = "select * from issueBook";
+            String sql2 = "select branch from student where student_id = '"+student_id+"'";
+            PreparedStatement st2 = con.c.prepareStatement(sql2);
+            ResultSet rs2 = st2.executeQuery();
+            String branch = rs2.getString("branch");
+            String sql = "select *, COUNT(*) AS num FROM returnBook WHERE branch = '"+branch+"' GROUP BY bname ORDER BY num DESC";
             PreparedStatement st = con.c.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
 
@@ -34,6 +38,7 @@ public class GetBookSuggesions extends JFrame{
     
 
     public GetBookSuggesions(String student_id) {
+
         setBounds(400, 200, 810, 594);
 	contentPane = new JPanel();
         contentPane.setBackground(Color.WHITE);

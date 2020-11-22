@@ -20,7 +20,7 @@ public class IssuedBooks extends JFrame{
     public void issueBook(String student_id) {
 	try {
             conn con =  new conn();
-            String sql = "select * from issueBook";
+            String sql = "select * from issuebook where student_id = '"+student_id+"'";
             PreparedStatement st = con.c.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
 

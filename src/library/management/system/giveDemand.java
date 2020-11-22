@@ -9,6 +9,7 @@ import java.util.*;
 
 public class giveDemand extends JFrame implements ActionListener{
 
+    public String student_id;
     private JPanel contentPane;
     private JTextField t1, t2, t4;
     private JButton b1,b2;
@@ -19,7 +20,7 @@ public class giveDemand extends JFrame implements ActionListener{
     }
 
     public giveDemand(String student_id) {
-        
+        this.student_id = student_id;
         setBounds(600, 200, 518, 442);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -107,6 +108,7 @@ public class giveDemand extends JFrame implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent ae){
+        
         try{
             conn con = new conn();
             if(ae.getSource() == b1){
